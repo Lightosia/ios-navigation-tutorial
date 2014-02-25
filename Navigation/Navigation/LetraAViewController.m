@@ -9,6 +9,7 @@
 #import "LetraAViewController.h"
 #import "LetraBViewController.h"
 
+
 @implementation LetraAViewController
 
 
@@ -21,12 +22,11 @@
     self.navigationItem.rightBarButtonItem=next;
     
     UIButton *botao = [UIButton
-                                        buttonWithType:UIButtonTypeSystem
-    [botao
-     setTitle:@"Alakazam"
-     forState:UIControlStateNormal];
+                       buttonWithType:UIButtonTypeSystem];
+    [botao setTitle:@"Abra" forState:UIControlStateNormal];
     [botao sizeToFit];
     botao.center = self.view.center;
+    [botao addTarget:self action:@selector(mostraImagem:) forControlEvents:UIControlEventAllTouchEvents];
     [self.view addSubview:botao];
     if([self.title isEqualToString:@"Z"]){
         
@@ -41,7 +41,13 @@
     
     
 }
-
+-(void)mostraImagem:(id)sender{
+    UIImage *imagem =[UIImage imageNamed:@"Abra.png"];
+    UIImageView *imageHolder = [[UIImageView alloc] initWithFrame:CGRectMake(30, 40, 280, 280)];
+    //  [self.view addSubview:imagem];
+    imageHolder.image=imagem;
+    [self.view addSubview:imageHolder];
+}
 
 
 
