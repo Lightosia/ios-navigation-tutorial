@@ -21,24 +21,24 @@
     self.navigationItem.rightBarButtonItem=next;
     
     UIButton *botao = [UIButton
-                                        buttonWithType:UIButtonTypeSystem];
+                                        buttonWithType:UIButtonTypeSystem
     [botao
-     setTitle:@"Mostre uma palavra, uma figura e leia a palavra ao apertar um botao"
+     setTitle:@"Alakazam"
      forState:UIControlStateNormal];
     [botao sizeToFit];
     botao.center = self.view.center;
-    
     [self.view addSubview:botao];
-    
+    if([self.title isEqualToString:@"Z"]){
+        
+    }
  
 }
 
 -(void)next:(id)sender {
-    LetraBViewController *proximo = [[LetraBViewController alloc]
-                                              initWithNibName:nil
-                                            bundle:NULL];
-    [self.navigationController pushViewController:proximo
-                                         animated:YES];
+    char aux = [self.title characterAtIndex:0];
+    aux = aux + 1;
+    self.title=[NSString stringWithFormat:@"%c",aux];
+    
     
 }
 
