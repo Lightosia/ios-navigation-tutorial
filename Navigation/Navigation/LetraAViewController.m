@@ -7,7 +7,6 @@
 //
 
 #import "LetraAViewController.h"
-#import "LetraBViewController.h"
 #import <AVFoundation/AVFoundation.h>
 
 
@@ -38,7 +37,7 @@
     frame.origin.x=130;
     frame.origin.y=400;
     _but.frame=frame;
-    [_but addTarget:self action:@selector(mostraImagem:) forControlEvents:UIControlEventAllTouchEvents];
+    [_but addTarget:self action:@selector(mostraImagem:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_but];
     
  
@@ -54,6 +53,7 @@
 }
 
 -(void)next:(id)sender {
+    [_imageHolder removeFromSuperview];
     index++;
     if(index >25)
         index=0;
@@ -66,7 +66,7 @@
     
 }
 -(void)back:(id)sender {
-    _imageHolder.hidden = YES;
+    [_imageHolder removeFromSuperview];
     index--;
     if(index <0)
         index=25;
