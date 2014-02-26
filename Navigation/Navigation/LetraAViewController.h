@@ -9,7 +9,13 @@
 #import <UIKit/UIKit.h>
 
 @interface LetraAViewController : UIViewController
-    
-
+@property NSMutableArray *listaTela;
+@property NSArray *letraChars;
+@property int index;
+@property UIButton *but;
+@property NSArray *pokeLista;
+@property NSArray *pokeImagens;
+@property UIImage *imagemPoke;
+@property UIImageView *imageHolder;
 
 @end
